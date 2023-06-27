@@ -20,29 +20,6 @@ pipeline{
                 echo 'sonarcube'
             }
 
-        }
-        stage('push to artifactory') {
-            steps {
-                echo 'push to artifactory'
-            }
-
-        }
-        stage('Deploy in QA') {
-            steps {
-                echo 'deploy to qa'
-            }
-
-        }
-        stage('Deploy to UAT') {
-            steps {
-                echo 'uat'
-            }
-
-        }
-        stage('Deploying to staging') {
-            steps {
-                echo 'staging'
-            }
 
         }
         stage('Deploy to prod') {
@@ -62,9 +39,7 @@ pipeline{
         }
         aborted{
             echo 'aborted'
-        }
-        always{
-            echo 'always'
+       
         }
     }
 }
