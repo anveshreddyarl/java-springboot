@@ -1,0 +1,91 @@
+pipeline{
+    agent any
+
+    stages{
+        stage('Build') {
+            steps {
+                echo 'build'
+
+            }
+
+        }
+        
+    }
+    stages{
+        stage('test') {
+            steps {
+                echo 'test'
+            }
+
+        }
+        
+    }
+    stages{
+        stage('Quality Gate-Sonar Qube') {
+            steps {
+                echo 'sonarcube'
+            }
+
+        }
+        
+    }
+    stages{
+        stage('push to artifactory') {
+            steps {
+                echo 'push to artifactory'
+            }
+
+        }
+        
+    }
+    stages{
+        stage('Deploy in QA') {
+            steps {
+                echo 'deploy to qa'
+            }
+
+        }
+        
+    }
+    stages{
+        stage('Deploy to UAT') {
+            steps {
+                echo 'uat'
+            }
+
+        }
+        
+    }
+    stages{
+        stage('Deploying to staging') {
+            steps {
+                echo 'staging'
+            }
+
+        }
+        
+    }
+    stages{
+        stage('Deploy to prod') {
+            steps {
+                echo 'prod'
+            }
+
+        }
+        
+    }
+    post {
+        failure{
+            echo 'failed'
+        }
+        success{
+            echo 'success'
+        }
+        aborted{
+            echo 'aborted'
+        }
+        always{
+            echo 'always'
+        }
+    }
+}
