@@ -5,10 +5,11 @@ pipeline{
         stage('Build') {
             steps {
                 echo 'build'
+                 sh 'mvn package'
             }
 
         }
-        stage('test') {
+        stage('push') {
             steps {
                 echo 'testing'
             }
