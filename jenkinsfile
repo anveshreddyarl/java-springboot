@@ -12,6 +12,8 @@ pipeline{
         stage('push') {
             steps {
                 echo 'testing'
+
+                sh "aws s3 cp target/bermtec-0.0.1.war s3://elasticbeanstalk-us-east-2-597671908319"
             }
 
         }
