@@ -1,5 +1,5 @@
 pipeline{
-    agent any
+    agent none
 
     environment {
         function_name = 'javasampl'
@@ -7,6 +7,7 @@ pipeline{
 
     stages{
         stage('Build') {
+            agent {label 'master'}
             steps {
                 echo 'build'
                  sh 'mvn package'
@@ -14,6 +15,7 @@ pipeline{
 
         }
         stage('push') {
+            agent {label 'master'}
             steps {
                 echo 'push'
 
